@@ -16,6 +16,7 @@ const TopBar = () => {
                 <Link to ={ROUTES.POPULAR} className='top-tags'>Popular</Link>
                 <Link to ={ROUTES.TOP_RATED} className='top-tags'>Top Rated</Link>
                 <Link to ={ROUTES.NOW_PLAYING} className='top-tags'>Now Playing</Link>
+                <Link to ={ROUTES.FAVORITES} className='top-tags'>Favorites</Link>
             </div>
 
             

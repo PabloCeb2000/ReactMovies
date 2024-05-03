@@ -43,7 +43,7 @@ const Home: React.FC = () =>{
                 
             </div>
             <div className='cards-popular'>
-                {movies?.length > 0 && movies.slice(0, 5).map((movie) => (
+                {movies?.length > 0 && movies.slice(0, 10).map((movie) => (
                             <MovieCard
                             movieId={movie.id}
                             posterPath={movie.poster_path}
