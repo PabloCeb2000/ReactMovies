@@ -1,0 +1,11 @@
+.top-bar{
+@apply flex bg-black p-6 border-b-4 border-b-gray-900 font-sans text-2xl font-semibold text-gray-600 justify-between;
+}
+
+.top-tags{
+@apply px-3;
+}
+
+.top-espacio{
+@apply px-80;
+}

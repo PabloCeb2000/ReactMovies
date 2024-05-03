@@ -1,0 +1,19 @@
+.main-popular{
+@apply relative bg-slate-100 ;
+}
+
+.title-popular{
+@apply flex p-6 px-4 font-sans text-2xl font-semibold justify-between;
+}
+.cards-no{
+@apply grid gap-4 grid-cols-4 grid-flow-row;
+}
+.cards-popular{
+@apply flex overflow-x-auto;
+}
+.button-popular{
+@apply flex items-center justify-center bg-slate-800 text-white font-semibold p-2 rounded-lg;
+}
+.name-popular{
+@apply flex items-center justify-center font-semibold text-2xl;    
+}
