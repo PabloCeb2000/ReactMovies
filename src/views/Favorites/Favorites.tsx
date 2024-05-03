@@ -38,10 +38,12 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div>
-            <h2>Favorites</h2>
+        <div className='main-popular'>
+           <div className='title-popular'>
+                Favoritos
+            </div>
             {favorites && favorites.length > 2 ? (
-                <div>
+                <div className='cards-no'>
                     {show && show.map((show: IMovieDetail) => (
                         <MovieCard
                             key={show.id}
@@ -54,7 +56,7 @@ const Favorites = () => {
                     ))}
                 </div>
             ):(
-                <div>
+                <div className='title-popular'>
                     No favorites
                 </div>
             )} 

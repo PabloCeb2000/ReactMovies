@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getPopular } from "../../services";
 import { IMovieResponse } from "./types";
 import { MovieCard } from "../../components/MovieCard";
+import '../../components/PopularMovies/PopularMovies.css';
 
 const Popular: React.FC = () => {
     const [movies, setMovies] = React.useState<IMovieResponse[]>([]);

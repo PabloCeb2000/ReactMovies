@@ -1,0 +1,19 @@
+.main-show{
+@apply flex
+}
+
+.poster-show{
+@apply h-96 w-80 p-4
+}
+
+.description-show{
+@apply p-4
+}
+
+.title-show{
+@apply text-5xl font-bold uppercase py-4
+}
+
+.overview-show{
+@apply  py-4
+}

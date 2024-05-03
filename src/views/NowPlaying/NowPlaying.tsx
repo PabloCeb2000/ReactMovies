@@ -31,7 +31,7 @@ const NowPlaying: React.FC = () => {
         <div className='main-popular'>
             {isLoading && <div>Loading...</div>}
             <div className='title-popular'>
-                Más votadas
+                Cartelera
             </div>
             <div className='cards-no'>
                 {movies?.length > 0 && 
