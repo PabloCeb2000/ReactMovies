@@ -40,7 +40,7 @@ const Favorites = () => {
     return (
         <div>
             <h2>Favorites</h2>
-            {favorites && favorites.length > 0 ? (
+            {favorites && favorites.length > 2 ? (
                 <div>
                     {show && show.map((show: IMovieDetail) => (
                         <MovieCard
@@ -54,8 +54,11 @@ const Favorites = () => {
                     ))}
                 </div>
             ):(
-                <div>No favorites</div>
+                <div>
+                    No favorites
+                </div>
             )} 
+
         </div>
 
 
