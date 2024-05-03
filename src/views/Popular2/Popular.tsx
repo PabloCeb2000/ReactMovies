@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { getPopular } from "../../services";
 import { IMovieResponse } from "./types";
 import { MovieCard } from "../../components/MovieCard";
@@ -32,7 +31,9 @@ const Popular: React.FC = () => {
         <div className='main-popular'>
             {isLoading && <div>Loading...</div>}
             <div className='title-popular'>
-                Populares
+                <div className="name-popular">
+                    <h1>Populares</h1>
+                </div>
             </div>
             <div className='cards-no'>
                 {movies?.length > 0 && 

@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom'
 import { MovieCard } from '../../components/MovieCard'
 import { getPopular } from "../../services";
+import { getTopRated } from "../../services";
+import { getNowPlaying } from "../../services";
 import { IMovieResponse } from "./types";
-import '../../components/PopularMovies/PopularMovies.css'
+import './Home.css'
 
 const Home: React.FC = () =>{
-
-    const [movies, setMovies] = React.useState<IMovieResponse[]>([]);
+    const [moviesP, setMoviesP] = React.useState<IMovieResponse[]>([]);
+    const [moviesT, setMoviesT] = React.useState<IMovieResponse[]>([]);
+    const [moviesN, setMoviesN] = React.useState<IMovieResponse[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const navigate = useNavigate();
 
     const getPopularMovies = async () => {
         await getPopular()
         .then((data) => {
             if (data && data.data){
-                setMovies(data.data.results);
+                setMoviesP(data.data.results);
 
             }
         })
@@ -23,37 +28,133 @@ const Home: React.FC = () =>{
 
     };
 
+    const morePopular = () => {
+        navigate('/popular');
+    };
+
+    const getTopRatedMovies = async () => {
+        await getTopRated()
+        .then((data) => {
+            if (data && data.data){
+                setMoviesT(data.data.results);
+
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+    };
+
+    const moreTopRated = () => {
+        navigate('/TopRated');
+    };
+
+    const getNowPlayingMovies = async () => {
+        await getNowPlaying()
+        .then((data) => {
+            if (data && data.data){
+                setMoviesN(data.data.results);
+
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+    };
+
+    const moreNowPlaying = () => {
+        navigate('/NowPlaying');
+    };
+
     useEffect(() => {
-        setIsLoading(true);
         getPopularMovies();
-        setIsLoading(false);
+        getTopRatedMovies();
+        getNowPlayingMovies();
     }, []);
 
+
     return(
-        <div className='main-popular'>
-            <div className='title-popular'>
-                
-                <div className="name-popular">
-                    <h1>Populares</h1>
+        <div className='main'>
+            <div className="section">
+                <div className='title'>
+                    
+                    <div className="name">
+                        <h1>Populares</h1>
+                    </div>
+                    
+                    <div>
+                        <button className='button' onClick={morePopular}>Ver mas</button>
+                    </div>
+                    
                 </div>
-                
-                <div>
-                    <button className='button-popular'>Ver mas</button>
+                <div className='cards'>
+                    {moviesP?.length > 0 && moviesP.slice(0, 10).map((movie) => (
+                                <MovieCard
+                                movieId={movie.id}
+                                posterPath={movie.poster_path}
+                                title={movie.title}
+                                votesAverage={movie.vote_average}
+                                genreId={movie.genre_ids[0]}
+                                />  
+                            
+                    ))}                
                 </div>
-                
             </div>
-            <div className='cards-popular'>
-                {movies?.length > 0 && movies.slice(0, 10).map((movie) => (
-                            <MovieCard
-                            movieId={movie.id}
-                            posterPath={movie.poster_path}
-                            title={movie.title}
-                            votesAverage={movie.vote_average}
-                            genreId={movie.genre_ids[0]}
-                            />  
-                        
-                        ))}                
+
+            <div className="section">
+                <div className='title'>
+                    
+                    <div className="name">
+                        <h1>Mejores Calificadas</h1>
+                    </div>
+                    
+                    <div>
+                        <button className='button' onClick={moreTopRated}>Ver mas</button>
+                    </div>
+                    
+                </div>
+                <div className='cards'>
+                    {moviesT?.length > 0 && moviesT.slice(0, 10).map((movie) => (
+                                <MovieCard
+                                movieId={movie.id}
+                                posterPath={movie.poster_path}
+                                title={movie.title}
+                                votesAverage={movie.vote_average}
+                                genreId={movie.genre_ids[0]}
+                                />  
+                            
+                    ))}                
+                </div>
             </div>
+
+            <div className="section">
+                <div className='title'>
+                    
+                    <div className="name">
+                        <h1>Cartelera</h1>
+                    </div>
+                    
+                    <div>
+                        <button className='button' onClick={moreNowPlaying}>Ver mas</button>
+                    </div>
+                    
+                </div>
+                <div className='cards'>
+                    {moviesN?.length > 0 && moviesN.slice(0, 10).map((movie) => (
+                                <MovieCard
+                                movieId={movie.id}
+                                posterPath={movie.poster_path}
+                                title={movie.title}
+                                votesAverage={movie.vote_average}
+                                genreId={movie.genre_ids[0]}
+                                />  
+                            
+                    ))}                
+                </div>
+            </div>
+
 
         </div>
     )
