@@ -6,6 +6,7 @@ import { getTopRated } from "../../services";
 import { getNowPlaying } from "../../services";
 import { IMovieResponse } from "./types";
 import './Home.css'
+import pelis from '../../constants/pelisplusplus.jpg'
 
 const Home: React.FC = () =>{
     const [moviesP, setMoviesP] = React.useState<IMovieResponse[]>([]);
@@ -76,7 +77,7 @@ const Home: React.FC = () =>{
 
 
     return(
-        <div className='main'>
+        <div className='main' >
             <div className="section">
                 <div className='title'>
                     

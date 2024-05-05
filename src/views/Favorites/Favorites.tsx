@@ -38,7 +38,7 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div className='main-popular'>
+        <div >
            <div className='title-popular'>
                 Favoritos
             </div>

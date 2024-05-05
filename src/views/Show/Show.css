@@ -1,13 +1,18 @@
 .main-show{
+@apply flex flex-col
+
+}
+
+.first-part-show{
 @apply flex
 }
 
 .poster-show{
-@apply h-96 w-80 p-4
+@apply h-auto w-80 p-4
 }
 
 .description-show{
-@apply p-4
+@apply p-4 
 }
 
 .title-show{
@@ -15,5 +20,58 @@
 }
 
 .overview-show{
-@apply  py-4
+@apply flex py-4
+}
+
+.icon-show{
+@apply w-7 h-7 mr-2 
+}
+
+.desc-element-show-f{
+@apply flex mr-2
+
+}
+
+.desc-element-show{
+@apply flex mx-2
+}
+
+.simpnosis-show{
+@apply text-lg py-2
+}
+.rest-show{
+@apply flex my-2 
+}
+
+
+.title-favorite-show{
+@apply text-xl font-bold  
+}
+
+.genres-show{
+@apply flex my-2
+}
+
+.genre-show{
+@apply bg-green-600 text-white px-2 py-1 rounded-md mr-2
+}
+
+.remove-favorites-show{
+@apply bg-red-600 text-white px-2 py-1 rounded-md my-2
+}
+
+.add-favorites-show{
+@apply bg-blue-600 text-white px-2 py-1 rounded-md my-2
+}
+
+.name-similares-show{
+@apply text-xl font-bold py-4 mx-4
+}
+
+.cards-similar-show{
+@apply flex overflow-x-auto;
+}
+
+.back-show{
+@apply bg-gray-800 px-2 py-1 rounded-md text-gray-300; 
 }

@@ -17,8 +17,7 @@ const routes: RouteObject[] = [
             {path: ROUTES.POPULAR, element: <Popular />},
             {path: ROUTES.TOP_RATED, element: <TopRated />},
             {path: ROUTES.NOW_PLAYING, element: <NowPlaying />},
-            {path: ROUTES.FAVORITES, element: <Favorites />},
-            
+            {path: ROUTES.FAVORITES, element: <Favorites />},            
             {path: `${ROUTES.SHOW}:id`, element: <Show />}
         ]
         

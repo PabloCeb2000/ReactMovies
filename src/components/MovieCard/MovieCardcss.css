@@ -7,7 +7,7 @@
 }
 
 .info{
-@apply absolute bottom-5 left-3 font-sans text-cyan-50;
+@apply absolute bottom-5 left-3 font-sans text-white;
 }
 
 .info-title{
@@ -22,6 +22,6 @@
 }
 
 .info-qual{
-@apply absolute bottom-4 left-7 font-sans text-cyan-50;
+@apply absolute bottom-4 left-7 font-sans text-white;
 }
 
